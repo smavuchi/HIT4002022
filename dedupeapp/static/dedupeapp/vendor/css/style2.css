@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+/*The Header*/
+header{
+    height: 70px;
+    box-shadow: 0 5px 10px #efefef
+  }
+  .main-wrapper {
+      margin: 0 auto;
+      width: 1400px;
+  }
+  
+  header nav{
+    margin-top: 20px;
+  }
+  
+  ul {
+      list-style: none;
+      float: left;
+  }
+  
+  ul li {
+      float: left;
+      list-style: none;
+  
+  }
+  ul li a {
+      color: #111;
+  }
+  .logo img{
+  
+    float: left;
+    height: 70px;
+    padding: 2px 10px;
+    background-color: inherit;
+  }
+  
+  
+  header nav ul li a {
+  
+      padding-right: 35px;
+      font-weight: bold;
+      font-family: arial;
+      font-size: 18px;
+      color: black;
+      line-height: 63px;
+  }
+  
+  header nav ul li a:hover{
+    text-decoration: none;
+    color: lime;
+  }
+  header .nav-loginout {
+      float: right;
+  }
+  
+  header .nav-loginout form {
+      float: left;
+      padding-top: 15px;
+  }
+  
+  header .nav-loginout form input {
+      float: left;
+      width: 200px;
+      height: 30px;
+      padding: 0px 10px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: #ccc;
+      font-family: arial;
+      font-size: 14px;
+      color: #111;
+      line-height: 30px;
+  }
+  
+  header .nav-loginout form button {
+      float: left;
+      width: 60px;
+      height: 30px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: black;
+      font-family: arial;
+      font-size: 14px;
+      color: white;
+      cursor: pointer;
+  }
+  
+  header .nav-loginout form button:hover {
+  
+      background-color: lime;
+  
+  }
+  
+  header .nav-loginout a {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border: none;
+      float: left;
+      background-color: #fff;
+      font-family: arial;
+      font-size: 16px;
+      color: black;
+      line-height: 63px;
+      cursor: pointer;
+  }
+  
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+/*Download File Link*/
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+a:link{text-decoration:none}
+.vn-green a{
+    background-color:#27ae60;
+      display:inline-block;
+      position:relative;
+      margin:30px 5px;
+      padding:20px 20px 20px 80px;
+      color:#fff;
+      transition:all 0.4s ease
+    }
+    
+    .vn-green a:before{
+      content:"\f019";
+      font-family:fontAwesome;
+      position:absolute;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      font-size:28px;
+      border-radius:0 20px 0 0;
+      color:#000;
+      background-color:#fff;
+      opacity:0.3;
+      padding:20px;
+      top:0;
+      left:0
+    }
+    
+    .vn-green a:hover{
+      background:#2c3e50
+    }
+    
+    .btn-filesub {
+        background: #2596be;
+        color: #fff;
+        border: 1px solid #eee;
+        width: 200px;
+        height: 60px;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #eee;
+        text-shadow: none;
+        }
+    .btn-filesub:hover {
+        background: #016ABC;
+        color: #fff;
+        border: 1px solid #eee;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px #eee;
+        text-shadow: none;
+        }

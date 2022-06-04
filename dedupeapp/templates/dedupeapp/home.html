@@ -1,0 +1,71 @@
+{% extends "dedupeapp/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+   <!-- Slides  -->
+   <div class="jumbotron jumbotron-fluid" style="background-color: #3E7EE6;">
+    <div class="container">
+      <h1 class="display-3" style="color:white; text-align: center; font-family: Brush Script MT, Brush Script Std, cursive;">Health Care Inpatient Deduplication</h1>
+      <p class="lead" style="color:white; text-align: center;" >Upload your Inpatient Dataset!!!</p>
+    </div>
+  </div>
+  {% if messages %}
+
+    {% for message in messages %}
+      {% if 'headers_mismatch' in message.extra_tags %}
+        <div class="alert alert-warning" role="alert">
+          <div class="bg-warning">
+            <p>{{message}}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+  {%endif %}
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-3">
+          <p class="lead">
+              <form method="post" action="dedupe_results" enctype="multipart/form-data">
+                  {% csrf_token %}
+                <dl>
+              <p>
+                <input type="file" name="file" accept=".csv" autocomplete="off">
+              </p>
+                </dl>
+                <p>
+              <input class="btn-filesub" type="submit" value="Submit">
+                </p>
+            </form>
+            </p>
+        </div>
+        <div class="col-sm-3"></div>
+        
+      </div>
+    </div>
+{% else %}
+<section class="banner_main">
+    <div class="container-fluid">
+    <div class="row d_flex">
+        <div class="col-md-6">
+            <div class="text-bg">
+                <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Health Care Data Deduplication</h1>
+                <br>
+                <br>
+                <p style="font-family: Brush Script MT, Brush Script Std, cursive; font-size: x-large;">The presence of duplicate records in the healthcare system is one of the most serious problems currently being faced in the healthcare sector today. Duplicate medical records are often created incorrectly due to inaccurate data entry. These duplicates can adversely affect the registration and billing system, but more importantly, patient safety. Due to the case that a patient has multiple records, healthcare providers can overlook important information that is duplicated. 
+                  The Health Care Data Deduplication and Merging using Adaptive Feature Selection system addresses this issue since it is a system that eliminates redundant copies of data and reduces storage overhead. 
+                  Data deduplication techniques are used to ensure that only unique instances of data are retained on storage media</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-img">
+                <figure><img src="/static/dedupeapp/vendor/images/box_img.png" alt="#"/></figure>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}

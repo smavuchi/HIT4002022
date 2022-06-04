@@ -1,0 +1,55 @@
+{% extends "dedupeapp/base.html" %}
+{% block content %}
+
+<div class="container">
+        <h2 class="text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"><u> User Deduplicated Files</u></h2><br>
+        <table class="table table-dark table-striped table-striped table-bordered" id="Tableresults" style="width:100%">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>User</th>
+              <th>File To Download</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- jinja2 Technique -->
+          {% for record in objects_list %}
+            <tr>
+              <td>{{record.title}}</td>
+              <td>{{record.user.username}}</td>
+              <td><a href="{{record.deduped_file.url}}" class="csvdownload">Download File</a></td>
+              <td><a href="{% url 'delete_record' %}{{record.id}}" class="btn-danger" style="border-radius: 40px;">Delete</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <br>
+
+
+{% endblock content %}
+
+{% block js %}
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+ 
+<script>
+    $(document).ready(function () {
+    $('#Tableresults').DataTable( {
+        "paging": true,
+        "responsive": true,
+        "processing": true,
+        "searching": true,
+        "autoWidth": false,
+        "ordering": true,
+        "columnDefs": [
+            {"width": "50px", "targets": 0},
+            {"width": "250px", "targets": 1},
+        ],
+    }
+    );
+} );
+</script>
+{% endblock js %}

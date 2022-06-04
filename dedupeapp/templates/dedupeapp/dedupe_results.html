@@ -1,0 +1,76 @@
+{% extends "dedupeapp/base.html" %}
+{% block content %}
+
+<div class="center">
+        <b>Number of Records:</b> {{ num_records }} <br>
+        <b>Created Pairs:</b> {{ created_pairs }} <br>
+        <b>Number of Predicted Duplicates:</b> {{ num_predictions }}
+</div>
+<br>
+<br>
+<div class="container">
+        <h2 class="text-center" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; width: 60px; height: 30px;"><u>Duplicates Table</u></h2><br>
+        <br>
+        <table class="table table-dark table-striped table-striped table-bordered" id="myTable" style="width:100%">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Procedure</th>
+              <th>State</th>
+              <th>Treatment Charge</th>
+            </tr>
+          </thead>
+          <tbody>
+          <!-- jinja2 Technique -->
+          {% if dup_pairs %}  
+          {% for i in dup_pairs %}
+            <tr>
+              <td>{{i.Name}}</td>
+              <td>{{i.Address}}</td>
+              <td>{{i.City}}</td>
+              <td>{{i.Procedure}}</td>
+              <td>{{i.State}}</td>
+              <td>{{i.Treatment_Charge}}</td>
+            </tr>
+          {% endfor %}
+          {% endif %}
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <br>
+      <div class="container-fluid">
+        {% for i in deduped_set %}
+        {% if i.deduped_file %}
+        <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">DOWNLOAD <b></b>THE DEDUPLICATED FILE FROM HERE:</h1>
+        <div class="vn-green" style="text-align: center;">
+          <a href="{{i.deduped_file.url}}" download class="btn-wrap">{{i.title}}</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+{% endblock content %}
+{% block js %}
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+ 
+<script>
+    $(document).ready(function () {
+    $('#myTable').DataTable( {
+        "paging": true,
+        "responsive": true,
+        "processing": true,
+        "searching": true,
+        "autoWidth": false,
+        "ordering": true,
+        "columnDefs": [
+            {"width": "50px", "targets": 0},
+            {"width": "250px", "targets": 1},
+        ],
+    }
+    );
+} );
+</script>
+{% endblock js %}
