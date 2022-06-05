@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Diagnoser</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Application-Form.css">
+</head>
+
+<body class="bg-gradient-primary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center" style="background: #4e73df;"><i class="far fa-laugh-wink text-light" style="font-size: 237px;transform: rotate(-15deg);"></i>
+                                <h1 style="color: var(--bs-white);padding: 0px;padding-left: 21px;">Diagnoser</h1>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                        <div id="notif"></div>
+                                    </div>
+                                    <!-- <form class="user"> -->
+                                    <div class="mb-3"><input class="form-control form-control-user" type="email"
+                                            id="email" aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                            name="email"></div>
+                                    <div class="mb-3"><input class="form-control form-control-user" type="password"
+                                            id="password" placeholder="Password" name="password"></div>
+                                    <div class="mb-3">
+                                        <div class="custom-control custom-checkbox small"></div>
+                                    </div><button class="btn btn-primary d-block btn-user w-100"
+                                        onclick="login()">Login</button>
+                                    <hr>
+                                    <!-- </form> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        function login() {
+            $.ajax({
+                url: "functions.php",
+                type: "post",
+                dataType: 'json',
+                data: {
+                    action: "login",
+                    email: $("#email").val(),
+                    password: $("#password").val()
+                },
+                success: function (response) {
+                    // console.log(response.result);
+                    if (response.result === "success") {
+                        // console.log(response.role);
+                        $('#notif').html(
+                            '<div class="alert alert-success" role="alert"><span><strong>Login success</strong></span></div>'
+                        );
+                        setInterval(function () {
+                            if (response.role === "clerk") {
+                                location.href = "http://localhost/diagnoser/clerkhome.html";
+                            }
+                            if (response.role === "radiographer") {
+                                location.href = "http://localhost/diagnoser/radiographerhome.php";
+                            }
+                            if (response.role === "doctor") {
+                                location.href = "http://localhost/diagnoser/doctorhome.php";
+                            }
+                        }, 1000);
+
+                    }
+                    if (response.result === "failed") {
+                        $('#notif').html(
+                            '<div class="alert alert-danger" role="alert"><span><strong>Either email or password not found</strong></span></div>'
+                        );
+                    }
+                }
+            });
+        }
+    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/Application-Form-1.js"></script> -->
+    <!-- <script src="assets/js/Application-Form.js"></script> -->
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

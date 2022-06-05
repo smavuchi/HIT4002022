@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Blank Page - Diagnoser</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/Application-Form.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0"><a
+                    class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>Diagnoser</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                    <li class="nav-item"> <a href="index.html" class="btn btn-outline-light d-none d-sm-inline-block" role="button" href="#">
+                        <i class="far fa-arrow-alt-circle-left"></i>&nbsp;Logout</a></li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3"
+                            id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <h2 style="color: rgb(0,0,0);">Clerk</h2>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"></div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
+                                    aria-expanded="false" data-bs-toggle="dropdown" href="#"><i
+                                        class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in"
+                                    aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small"
+                                                type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0"
+                                                    type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <section>
+                        <h1 class="text-center text-capitalize">Patient Booking form</h1>
+                        <div class="container">
+                            <div id="notif"></div>
+                            <form id="application-form">
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p><strong>First Name</strong>&nbsp;<span class="text-danger">*</span></p>
+                                            <input class="form-control" id="firstname" type="text" required="" name="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Last Name</strong>&nbsp;<span class="text-danger">*</span></p>
+                                            <input class="form-control" id="lastname" type="text" required="" name="">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p><strong>Date Of Birth</strong>&nbsp;<span class="text-danger">*</span>
+                                            </p><input class="form-control" id="dob" type="date" required="" name="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Email&nbsp;</strong><span class="text-danger">*</span></p><input
+                                                class="form-control" id="email" type="email" name="">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Phone Number&nbsp;</strong><span class="text-danger">*</span></p>
+                                            <input class="form-control" id="phonenumber" type="number" name=""
+                                                placeholder="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <p><strong>Address&nbsp;</strong><span class="text-danger">*</span></p><input
+                                        class="form-control" type="text" required="" name="" id="address"
+                                        placeholder="">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Appointment Date</strong>&nbsp;<span class="text-danger">*</span>
+                                            </p><input class="form-control" id="doa" type="date" required="" name="">
+                                        </div>
+                                        <div class="col-md-6">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="justify-content-center d-flex form-group mb-3" style="padding-top: 20px;">
+                                    <div id="submit-btn" style="max-width: 100%;">
+                                        <div class="row">
+                                            <div class="col-sm-12 offset-sm-0"><a class="btn btn-success btn-icon-split"
+                                                    onclick="book()" role="button"><span class="text-white-50 icon"><i
+                                                            class="fas fa-check"></i></span><span
+                                                        class="text-white text">Submit</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        function book() {
+            if (!$("#firstname").val() || !$("#lastname").val() || !$("#dob").val() || !$("#email").val() || !$("#phonenumber").val() || !$("#address").val() || !$("#doa").val()) {
+                $('#notif').html(
+                    '<div class="alert alert-danger" role="alert"><span><strong>fill in all inputs</strong></span></div>'
+                );
+                setInterval(function () {
+                    $('#notif').html("");
+                }, 3000);
+                return;
+            }
+            $.ajax({
+                url: "functions.php",
+                type: "post",
+                dataType: 'json',
+                data: {
+                    action: "bookpatient",
+                    firstname: $("#firstname").val(),
+                    lastname: $("#lastname").val(),
+                    dob: $("#dob").val(),
+                    email: $("#email").val(),
+                    phonenumber: $("#phonenumber").val(),
+                    address: $("#address").val(),
+                    doa: $("#doa").val()
+                },
+                success: function (response) {
+                    $("#firstname").val("");
+                    $("#lastname").val("");
+                    $("#dob").val("");
+                    $("#email").val("");
+                    $("#phonenumber").val("");
+                    $("#address").val("");
+                    $("#doa").val("");
+                    if (response.result === "success") {
+                        $('#notif').html(
+                            '<div class="alert alert-success" role="alert"><span><strong>Booking successful</strong></span></div>'
+                        );
+                    }
+                    if (response.result === "failed") {
+                        $('#notif').html(
+                            '<div class="alert alert-danger" role="alert"><span><strong>Oops something went wrong</strong></span></div>'
+                        );
+                    }
+                    setInterval(function () {
+                        $('#notif').html("");
+                    }, 3000);
+                }
+            });
+        }
+    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/Application-Form-1.js"></script> -->
+    <!-- <script src="assets/js/Application-Form.js"></script> -->
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
