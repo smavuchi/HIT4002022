@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html layout:decorate="~{task/layout}">
+<head>
+    <title>Task List</title>
+    ...
+</head>
+<body>
+<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+<div layout:fragment="content">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="driver : ${drivers}">
+            <td th:text="${driver.id}">${vehicle.id}</td>
+            <td th:text="${driver.make}">Text ...</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
