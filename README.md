@@ -29,6 +29,9 @@ python manage.py migrate
 
 python manage.py runserver
 
+# Dataset
+Contained within Dataset folder
+
 # For Admin Login
 
 Run the following in terminal:
