@@ -1,0 +1,62 @@
+{% extends "layout.html" %} {% block body %}
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Dashboard</h5>
+                    <p class="m-b-0">Welcome to Payment Authentication System</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+  <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+          <div class="page-wrapper">
+              <!-- Page-body start -->
+              <div class="page-body">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category}}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                <section>
+                    <div style="background-image: url('/static/images/carimg.jpg');">
+                       <div>
+                          <br>
+                          <br>
+                          <center>
+                          <h1>Upload any photo of the vehicle.</h1>
+                          <center>
+                          <div>
+                             <form action="/cardetail" enctype="multipart/form-data" method="POST" source="custom" name="form">
+                                <div>
+                                   <br>
+                                   <br>
+                                   <center>
+                                   <input type="file" placeholder="Email" id="email-6797" name="file" required="">
+                                   <center>
+                                </div>
+                                <div>
+                                   <br>
+                                   <br>
+                                   <center>
+                                   <input type="submit" value="Submit">
+                                   <center>
+                                   <br>
+                                   <br>
+                                </div>
+                                <input type="hidden" value="" name="recaptchaResponse">
+                             </form>
+                          </div>
+                       </div>
+                    </div>
+                 </section>
+
+ {% endblock %}

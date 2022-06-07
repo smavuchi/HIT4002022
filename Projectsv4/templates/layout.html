@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="../static/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/bootstrap.min.css">
+    <!-- waves.css -->
+    <link rel="stylesheet" href="../static/assets/pages/waves/css/waves.min.css" type="text/css" media="all">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/icon/themify-icons/themify-icons.css">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/icon/icofont/css/icofont.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css" href="../static/assets/icon/font-awesome/css/font-awesome.min.css">
+
+<!--Data Tables-->
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/responsive.bootstrap4.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/assets/css/jquery.mCustomScrollbar.css">
+    
+    <title>License Plate Payment System</title>
+</head>
+<body>
+    <!-- <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
+              <div class="mdl-layout__header-row">
+               
+                <span class="mdl-layout-title">Payment Authentication System</span>
+              
+                <div class="mdl-layout-spacer"></div>
+                
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                  <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
+                </nav>
+              </div>
+            </header>
+            <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title">Sidebar Menu</span>
+              <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="{{url_for('index')}}">Home</a>
+              </nav>
+            </div> -->
+
+              <div class="theme-loader">
+      <div class="loader-track">
+          <div class="preloader-wrapper">
+              <div class="spinner-layer spinner-blue">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+              <div class="spinner-layer spinner-red">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+            
+              <div class="spinner-layer spinner-yellow">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+            
+              <div class="spinner-layer spinner-green">
+                  <div class="circle-clipper left">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                      <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                      <div class="circle"></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Pre-loader end -->
+  <div id="pcoded" class="pcoded">
+      <div class="pcoded-overlay-box"></div>
+      <div class="pcoded-container navbar-wrapper">
+          <nav class="navbar header-navbar pcoded-header">
+              <div class="navbar-wrapper">
+                  <div class="navbar-logo">
+                      <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                          <i class="ti-menu"></i>
+                      </a>
+                      <div class="mobile-search waves-effect waves-light">
+                          <div class="header-search">
+                              <div class="main-search morphsearch-search">
+                                  <div class="input-group">
+                                      <span class="input-group-addon search-close"><i class="ti-close"></i></span>
+                                      <input type="text" class="form-control" placeholder="Enter Keyword">
+                                      <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <a href="/">
+                          <!--img class="img-fluid" src="../static/assets/images/logo.png" alt="Theme-Logo" /> -->
+                      </a>
+                      <a class="mobile-options waves-effect waves-light">
+                          <i class="ti-more"></i>
+                      </a>
+                  </div>
+                
+                  <div class="navbar-container container-fluid">
+                     
+                      <ul class="nav-right">
+                          
+                          <li class="user-profile header-notification">
+                              <a href="#!" class="waves-effect waves-light">
+                                  <!-- <img src="../static/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image"> -->
+                                  <span>{{email}}</span>
+                                  <i class="ti-angle-down"></i>
+                              </a>
+                              <ul class="show-notification profile-notification">
+                               
+                                  <li class="waves-effect waves-light">
+                                      <a href="#">
+                                          <i class="ti-user"></i> Profile
+                                      </a>
+                                  </li>
+                                 
+                                 
+                                  <li class="waves-effect waves-light">
+                                      <a href="/logout">
+                                          <i class="ti-layout-sidebar-left"></i> Logout
+                                      </a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+
+          <div class="pcoded-main-container">
+              <div class="pcoded-wrapper">
+                  <nav class="pcoded-navbar">
+                      <!-- <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div> -->
+                      <div class="pcoded-inner-navbar main-menu">
+                          <div class="">
+                              <div class="main-menu-header">
+                                  <!-- <img class="img-80 img-radius" src="../static/assets/images/avatar-4.jpg" alt="User-Profile-Image"> -->
+                                  <div class="user-details">
+                                      <span id="more-details">{{email}}<i class="fa fa-caret-down"></i></span>
+                                  </div>
+                              </div>
+        
+                              <div class="main-menu-content">
+                                  <ul>
+                                      <li class="more-details">
+                                          <a href="#"><i class="ti-user"></i>View Profile</a>
+                                         
+                                          <a href="/logout"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="p-15 p-b-0">
+                            
+                          </div>
+                          
+                          <ul class="pcoded-item pcoded-left-item">
+                              <li class="active">
+                                  <a href="/logged_in" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.dash.main">Pay</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                              </li>
+
+                              <li class=" ">
+                                <a href="/addvehicle" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Vehicle</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="/viewtrans" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">View Transactions</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            
+                      </div>
+                  </nav>
+                  <div class="pcoded-content">
+                      <!-- Page-header start -->
+      
+                                      
+                                       {%block body %}{%endblock%}
+                                    </div>
+                                    <!-- Page-body end -->
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      
+    
+  
+
+  
+<script type="text/javascript" src="../static/assets/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/jquery-ui/jquery-ui.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/popper.js/popper.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/bootstrap/js/bootstrap.min.js "></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="../static/assets/js/jquery-slimscroll/jquery.slimscroll.js "></script>
+<!-- waves js -->
+<script src="../static/assets/pages/waves/js/waves.min.js"></script>
+
+
+
+<!--Data Tables-->
+
+<script type="text/javascript" src="../static/assets/js/table/data-table-custom.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/dataTables.bootstrap4.min.js "></script>
+
+<script type="text/javascript" src="../static/assets/js/table/buttons.print.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/jszip.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/pdfmake.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/vfs_fonts.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/dataTables.buttons.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/dataTables.responsive.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/jquery.dataTables.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/responsive.bootstrap4.min.js "></script>
+<script type="text/javascript" src="../static/assets/js/table/buttons.html5.min.js "></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="../static/assets/js/SmoothScroll.js"></script>
+<script src="../static/assets/js/jquery.mCustomScrollbar.concat.min.js "></script>
+<!-- Custom js -->
+<script src="../static/assets/js/pcoded.min.js"></script>
+<script src="../static/assets/js/vertical-layout.min.js "></script>
+<script src="../static/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="../static/assets/js/script.js"></script>
+
+</html>

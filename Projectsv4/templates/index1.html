@@ -1,0 +1,152 @@
+{% extends "layout.html" %} {% block body %}
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Dashboard</h5>
+                    <p class="m-b-0">Welcome to Tollgate Payment System</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+  <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+          <div class="page-wrapper">
+              <!-- Page-body start -->
+              <div class="page-body">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category}}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+<!-- <div class='content-grid mdl-grid' justify-content='center'>
+    <div>
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text mdl-color-text--light-blue-900">Live Feed</h2>
+    </div>
+    <div >
+        <video id="screenshot-video"   autoplay></video>
+    </div>
+    <div class="mdl-card__supporting-text" >
+        <canvas id='canvas-element' style="display:none;"></canvas>
+        <p id='status'></p>
+    </div>
+</div> -->
+<div class="">
+    <div class="col-xl-8 col-md-10">
+        <div class="card-header">
+            <h5>Live Feed</h5>
+            <div class="card-block">
+            <video id="screenshot-video"  autoplay></video>
+
+            <div >
+                <canvas id='canvas-element' style="display:none;"></canvas>
+                <p id='status'></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+     <!-- <form action="/cardetails" method="post">
+
+     
+    <div class="mdl-card__actions mdl-card--border">
+        <button type="submit"  class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"  >Proceed to Payment</button>
+    </div>
+   </form> -->
+   
+
+
+<script type="text/javascript" charset="utf-8">
+    ///set up video and controls///
+    $(document).ready(
+        
+        (function () {
+        const button = document.querySelector('#screenshot-button');
+        const img = document.querySelector('#screenshot-img');
+        const video = document.querySelector('#screenshot-video');
+        const processed = document.querySelector('#processed-img');
+
+        const canvas = document.querySelector('#canvas-element');
+
+        var constraints = {
+            video: true
+        };
+
+        video.onplay = (event) => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            // Other browsers will fall back to image/png
+            // img.src = canvas.toDataURL('image/jpg');
+            // console.log(canvas.toDataURL('image/jpg'));
+            let dataURL = canvas.toDataURL('image/jpg');
+            stream_image(dataURL);
+            
+        };
+
+        function handleSuccess(stream) {
+            video.srcObject = stream;
+        };
+
+        function handleError(error) {
+            console.log(error);
+            alert(error);
+        };
+        function hasGetUserMedia() {
+            return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+        };
+        // console.log("ready!");
+        navigator.mediaDevices.getUserMedia(constraints).
+            then(handleSuccess).catch(function(error){console.log(error)});
+    
+
+    const status = document.querySelector('#status');
+    function stream_image(img_string) {
+        // console.log(img_string)
+        $.ajax({
+            type: 'POST',
+            url: "{{ url_for('process') }}",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ "img": img_string }),
+            success: function (data) {
+                
+                // console.log("yes please we are here")
+                // console.log(data)
+                if (data=="no"){
+                    navigator.mediaDevices.getUserMedia(constraints).
+                    then(handleSuccess).catch(function(error){console.log(error)});
+                    
+                    
+                    
+                    // console.log("testing")
+                }
+                else{
+
+                    window.location.href = '/cardetails'
+                            
+                    console.log("payment")
+                }
+            
+
+                
+            },
+            error: function () {
+                alert('error');
+            }
+        })
+    };
+    })()
+    );
+
+</script> 
+{% endblock %}

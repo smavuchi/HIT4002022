@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block body %}
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Dashboard</h5>
+                    <p class="m-b-0">Welcome to Payment Authentication System</p>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+  <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+          <div class="page-wrapper">
+              <!-- Page-body start -->
+              <div class="page-body">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category}}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                <section>
+                    <div style="background-image: url('/static/images/carimg.jpg');">
+                       <div>
+                          <br>
+                          <br>
+                          <center>
+                          <h1>Select Your Method of Payment.</h1>
+                          </center>
+
+                          <div class='row cards-dash' justify-content='center'>
+                          <div class="card-dash">
+                           
+                            <div >
+                                <h2 class="mdl-card__title-text mdl-color-text--light-blue-900">Upload Image</h2>
+                                <i class='fa fa-camera proceed-btn' style='font-size:90px '></i>
+                            </div>
+                            <div class="proceed-btn" >
+                                <a href="/uploadimage"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20"  >Proceed</a>
+                            </div>
+                        </div>
+                        <div class="card-dash" >
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text mdl-color-text--light-blue-900">Live Feed</h2>
+                               
+                                <i class="fa fa-rss proceed-btn" style='font-size:90px'></i>
+                            </div>
+
+                            <div >
+                                <a href="/uploadfeed"  class="btn btn-primary proceed-btn btn-md btn-block waves-effect waves-light text-center m-b-20"  >Proceed</a>
+                            </div>
+                        </div>
+                        <div class="card-dash" >
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text mdl-color-text--light-blue-900">Upload video</h2>
+                                <i class='fa fa-video-camera proceed-btn' style='font-size:90px'></i>
+                            </div>
+                            <div >
+                                <a href="/uploadvideo"  class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20 proceed-btn"  >Proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                       </div>
+                    </div>
+                 </section>
+
+ {% endblock %}

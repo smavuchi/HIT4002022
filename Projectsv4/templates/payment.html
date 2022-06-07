@@ -1,0 +1,64 @@
+{% extends "layout.html" %} {% block body %}
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Dashboard</h5>
+                    <p class="m-b-0">Welcome to Payment Authentication System</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item">
+                        <a href="/"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="#!">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+  <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+          <div class="page-wrapper">
+              <!-- Page-body start -->
+              <div class="page-body">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category}}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Payment Page</h5>
+                    <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
+                </div>
+                <div class="card-block">
+                    <form class="form-material" method="POST" action="/payment">
+                        <div class="form-group form-default">
+                            <input type="number" name="amount" class="form-control" required="">
+                            <span class="form-bar"></span>
+                            <label class="float-label">Enter Amount</label>
+                        </div>
+                        
+                        <div class="row m-t-30">
+                          <div class="col-md-12">
+                              <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Pay</button>
+                          </div>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  {% endblock %}

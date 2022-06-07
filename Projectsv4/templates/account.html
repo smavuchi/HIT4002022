@@ -1,0 +1,105 @@
+{% extends "layout.html" %} {% block body %}
+<div class="page-header">
+    <div class="page-block">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div class="page-header-title">
+                    <h5 class="m-b-10">Add Vehicle</h5>
+                    <!-- <p class="m-b-0">Welcome to Mega Able</p> -->
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item">
+                        <a href="/"> <i class="fa fa-home"></i> </a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="/">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+  <div class="pcoded-inner-content">
+      <!-- Main-body start -->
+      <div class="main-body">
+          <div class="page-wrapper">
+              <!-- Page-body start -->
+              <div class="page-body">
+                  {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div class="alert alert-{{ category}}"> {{ message|capitalize }} </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h5>Vehicle Details</h5>
+            <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
+        </div>
+        <div class="card-blockn">
+            <form class="form-material" method="POST" action="/addvehicle" enctype="multipart/form-data">
+                <div class="form-group form-default">
+                    <input type="text" name="fullname" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Fullname</label>
+                </div>
+                <div class="form-group form-default">
+                    <input type="email" name="email" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Email (exa@gmail.com)</label>
+                </div>
+
+                <!-- <div class="form-group form-default">
+     
+                    <select  class="form-control"  name="gender" required>
+                        <option ></option>
+                        <option value="FEMALE">FEMALE</option>
+                        <option value="MALE">MALE</option>
+                </select> 
+                <label class="float-label">Gender</label> 
+                </div> -->
+                
+              
+                <div class="form-group form-default">
+                    <input type="text" name="carreg" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Vehicle License Plate Number</label>
+                </div>
+                   
+
+                <div class="form-group form-default">
+                    <input type="text" name="vname" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Vehicle Name</label>
+                </div>
+                <div class="form-group form-default">
+                    <input type="text" name="model" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Vehicle Model</label>
+                </div>
+                <div class="form-group form-default">
+                    <input type="text" name="vtype" class="form-control" required="true">
+                    <span class="form-bar"></span>
+                    <label class="float-label">Vehicle Type </label>
+                </div>
+                <div class="form-group form-default">
+                   
+                    <input class="form-control" name="balance" type="number" required data-toggle="popover" data-placement="top" data-content="Please enter the account balance">
+                    <label class="float-label" >Account Balance</label>
+                </div>
+
+               
+               
+                       
+                <button class="btn btn-primary btn-round waves-effect waves-light">Add Vehicle</button>                                            
+            </form>
+        </div>
+    </div>
+</div>
+ 
+  {% endblock %}

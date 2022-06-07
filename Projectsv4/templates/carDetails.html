@@ -1,0 +1,58 @@
+{% extends "layout.html" %} {% block body %}
+
+
+<div class="col-xl-12 col-md-12">
+  <div class="card">
+      <div class="card-header">
+          <h5>Payment Details</h5>
+          <span class="text-muted">Information about vehicle in video provided is below</span>
+          <div class="card-header-right">
+              <ul class="list-unstyled card-option">
+                  <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                  <li><i class="fa fa-window-maximize full-card"></i></li>
+                  <li><i class="fa fa-minus minimize-card"></i></li>
+                  <li><i class="fa fa-refresh reload-card"></i></li>
+                  <li><i class="fa fa-trash close-card"></i></li>
+              </ul>
+          </div>
+      </div>
+      <div class="card-blockn">
+        <div >
+        <h4 class="maH4" style="color:blue;display:inline;">Vehicle license Plate: </h4>
+        <h4 class="maH4" style="display:inline">{{ result.carreg }}</h4><br>
+      
+        <h4 class="maH4" style="color:blue;display:inline;">Owner: </h4>
+        <h4 class="maH4" style="display:inline">{{ result.owner }}</h4><br>
+      
+        <h4 class="maH4" style="color:blue;display:inline;">Vehicle: </h4>
+        <h4 class="maH4" style="display:inline">{{ result.vehicle }}</h4><br>
+      
+        <h4 class="maH4" style="color:blue;display:inline;">Car Model: </h4>
+        <h4 class="maH4" style="display:inline">{{ result.carmodel }}</h4><br>
+      
+      
+      
+        <h4 class="maH4" style="color:blue;display:inline;">Vehicle Type: </h4>
+        <h4 class="maH4" style="display:inline">{{ result.vehicletype }}</h4><br>
+      
+      
+        <hr>
+       
+        <h4 class="maH4" style="color:blue;display:inline;">Paid : </h4>
+        <h4 class="maH4" style="color:green;display:inline;">$5</h4><br>
+        <h4 class="maH4" style="color:blue;display:inline;">Remaining Balance : </h4>
+        <h4 class="maH4" style="color:green;display:inline;">${{balance}}</h4><br>
+      
+        <br>
+        <hr>
+      </div>
+      <div>
+        <img class="img-car-details" src="{{url_for('static',filename = 'uploads/imageToSave.jpg')}}" >
+      </div>
+      </div>
+  </div>
+</div>
+  
+
+
+  {% endblock %}
