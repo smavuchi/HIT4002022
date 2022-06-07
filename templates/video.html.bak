@@ -1,0 +1,35 @@
+{%extends "base.html" %}
+
+{% block sectionName %}
+    <span class="dashboard">Video</span>
+{% endblock %}
+
+{% block homecontent %}
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="title"><strong>Emotion Sentiments</strong></div>
+                    <img src="{{ url_for(' video_feed ') }}" width="600" height="400" alt="">
+            </div>
+            <div class="top-sales box">
+                <div class="title">Top Performing Guards</div> 
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Happy</th>
+                        <th>Nutral</th>
+                        <th>Sad</th>
+                    </tr>
+                    {% for i in data5 %}
+                    <tr>
+                        <td>{{ i["name"] }}#{{ loop.index }}</td>
+                        <td>{{ i["happy"] }}</td>
+                        <td>{{ i["Nutral"] }}</td>
+                        <td>{{ i["Sad"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table> 
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>testing</title>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/dashbard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.css') }}">
+    
+    
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+     <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='visitor/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='visitor/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='visitor/css/form.css')}}">
+   </head>
+</head>
+<body>
+	<form>
+		<input  type="" name="register" class="btnRegister"  value="Register" onclick="postV()"/>
+
+	</form>
+</body>
+<script type="text/javascript">
+	function postV(){
+	    alert("in post v ")
+	     $.ajax({
+	        method:"Post",
+	        url:"testing",
+	        data:{text:"King"
+	    },success:function(res){
+	      // document.location.reload()
+	      alert("Done")
+	    }
+	    });
+
+	 }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashbard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.0.0-web/fontawesome-free-6.0.0-web/css/all.css') }}">
+    
+    
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+     <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='visitor/bootstrap.min.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signupBX.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bots.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+</html>

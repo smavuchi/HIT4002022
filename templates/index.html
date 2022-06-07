@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flask MySQL jquery ajax Live Search</title>
+
+    <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='visitor/bootstrap.min.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='visitor/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='visitor/css/form.css')}}">
+
+<script>
+    const array=[]
+    $(document).ready(function(){
+      
+        $("#livebox").on("input",function(e){
+            $("#datalist").empty();
+            $.ajax({
+                method:"post",
+                url:"/livesearch",
+                data:{text:$("#livebox").val()},
+                success:function(res){
+
+                    var data = "<div class='list-group'>";
+                    $.each(res,function(index,value){
+                        var inforData=(value["Address"] +" -> "+ value["Name"] +" , "+ value["Surname"]);
+                        data += "<p class='list-group-item list-group-item-action' id='"+ index +"' onclick=view("+index +")>"+ inforData +"</p>";
+                        array.push(inforData)
+                    });
+                    data += "</div>";
+                    $("#datalist").html(data);
+                }
+            });
+        });
+    });
+    function view(x){
+        document.getElementById('livebox').value=array[x]
+    }
+    
+</script>   
+</head>
+<body>
+
+<div class="container">
+    <br/>
+    <p><h2>Request visitation</h2></p>
+    <form method="Post" action="{{ url_for('postToDB')}}">
+         <input type="text" id="livebox" name="text" class="form-control" placeholder="Search resident address..................." autocomplete="off">
+         <p id = "datalist"></p>
+         <!--fullname-->
+          <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+            <label for="sex">Sex</label>
+            <select id="sex" name="sex">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+
+            <label for="4number">Phone number</label>
+            <input type="text" id="4number" name="phonenumber" placeholder="Your phone number..">
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Your email..">
+
+            <label for="nId">National Id</label>
+            <input type="text" id="nId" name="nationalId" placeholder="Your National #..">
+
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Address here.." style="height:200px"></textarea>
+
+        
+         <button type="submit" class="btn btn-primary btn-lg btn-block">Make request</button> 
+
+
+    </form>
+    
+    
+</div>
+</body>
+</html>
