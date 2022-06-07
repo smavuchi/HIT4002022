@@ -1,0 +1,69 @@
+{%extends "base.html" %}
+
+{% block sidebar %}
+<ul class="nav-links">
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+     
+       
+        <li>
+          <a href="#" >
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+        </li>
+        <li>
+          <a href="" class="active">
+             <i class="fa-solid fa-video"></i>
+            <span class="links_name">Video</span>
+          </a>
+        </li>
+        
+        <li onclick="trackLocation({{ result }})">
+          <a href="{{ url_for('signup') }}">
+            <i class="fa-solid fa-cog" ></i>
+            <span class="links_name">Settings</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class="fa fa-angles-left"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+{% endblock %}
+
+{% block sectionName %}
+    <span class="dashboard">Video</span>
+{% endblock %}
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+ {% block commName %}{{data['commName']}}{% endblock %}
+{% block nameRight %}
+<div class="profile-details">
+    <img src="{{ url_for('static', filename='img/lavet.png') }}" alt="">
+    <span class="admin_name">{{ commName['membername']}}</span>
+    <i class='bx bx-chevron-down' ></i>
+</div>
+{% endblock %}
+
+{% block homecontent %}
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="title"><strong>Emotion Sentiments</strong></div>
+                    <!--<img src="{{ url_for('static', filename='img/lavet.png') }}" width="600" height="400" alt="">-->
+                    <img src="{{ url_for('video_feed') }}" width="100%" height="90%" />
+            </div>
+            <div class="top-sales box">
+                 <div class="title">Top Performing Guards</div> 
+                <div id = "datalist"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

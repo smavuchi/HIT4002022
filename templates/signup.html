@@ -1,0 +1,225 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<link rel="stylesheet" href="{{ url_for('static', filename='css/signupBX.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    	<link rel="stylesheet" href="signup.css">
+    	
+    	
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+        <title>SeGAS</title>
+  </head>
+<body>
+<!-- Nave top--->
+  	<nav class='navbar navbar-dark bg-primary'>
+		  <a class='navbar-brand' href='#'><strong>Secure Gates Access System (SeGAS)</strong><i><?php $company = '@Waterfalls Parktown Community'; echo $company ?> </i></a>
+	</nav>
+
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16" alt="">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+                </svg>
+
+                <h3>Hi, Admin</h3>
+                <p>You can create member accounts from here.
+                   <br>
+                    <strong><i>Fill the information and submit</i></strong>
+                </p>
+               <!-- <input type="submit" name="" value="Login" href="index.html"/><br/>-->
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">SeGAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Add Resident</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                   <form method="Post" action="">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">RESIDENT SUBMIT FORM</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="fname" name="member_name"class="form-control" placeholder="Firsts Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="lname" name="member_surname"class="form-control" placeholder="Last Name *" value="" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" id="email" name="member_email" class="form-control" placeholder="Your Email *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="nId" minlength="10" maxlength="10" name="member_national_id" class="form-control" placeholder="Your National ID *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="address" name="member_address" class="form-control" placeholder="Your Physical Address *" value="" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="maxl">
+                                        <label class="radio inline"> 
+                                            <input id="sex" type="radio" name="gender" value="male" checked>
+                                            <span> Male </span> 
+                                        </label>
+                                        <label class="radio inline"> 
+                                            <input id="sex" type="radio" name="gender" value="female">
+                                            <span>Female </span> 
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- <h5 >Community details</h5>
+                                <div class="form-group">
+                                    <input type="text" name="comm_name" class="form-control"  placeholder="Community Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text"  name="comm_addr"class="form-control"  placeholder="Community Address *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="comm_descr"class="form-control"  placeholder="Description of the community *" value="" />
+                                </div> -->
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input id="username" type="text" name="username" class="form-control" placeholder="Enter username *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" type="password" name="member_password" class="form-control" placeholder="Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input id="password_confirm" type="password" name="member_password_confirm" class="form-control"  placeholder="Confirm Password *" value="" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                        <option>What is your Birthdate?</option>
+                                        <option>What is Your old Phone Number</option>
+                                        <option>What is your Pet Name?</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="member_answer_qn" class="form-control" placeholder="Enter Your Answer *" value="" />
+                                </div>
+
+                                <input  type="" name="register" class="btnRegister"  value="Register" onclick="postVisitors()"/>
+                                <!-- <input  type="" name="register" class="btnRegister"  value="Registering" onclick="postV()"/> -->
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+
+                <!--
+                   <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3  class="register-heading">Create User Account</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                        <option>What is your Birthdate?</option>
+                                        <option>What is Your old Phone Number</option>
+                                        <option>What is your Pet Name?</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                                </div>
+                                <input type="submit" class="btnRegister"  value="Register"/>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signupBX.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bots.min.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='visitor/jquery.min.js') }}"></script>
+
+
+    </body>
+
+    <script type="text/javascript">
+        function postVisitors(){
+            alert("in postVisitors")
+            var communityId=localStorage.getItem("communityId");
+            var resident_address = $('#livebox').val();
+            var fname = $('#fname').val();
+            var lname = $('#lname').val();
+            var sex = $('#sex').val();
+            // var fnumber = $('#4number').val();
+            var email = $('#email').val();
+            var nId = $('#nId').val();
+            var address = $('#address').val();
+            // Login credentials--------------------------------
+            usrname= $('#username').val();
+            psswrd= $('#password').val();
+            // alert(psswrd)
+            passConfirm= $('#password_confirm').val();
+
+            $.ajax({
+                method:"Post",
+                url:"postToDB",
+                data:{text:communityId+":"+fname+":"+lname+":"+sex+":"+email+":"+nId+":"+address+":"+usrname+":"+psswrd+":"+passConfirm
+            },success:function(res){
+              // document.location.reload()
+              alert("Done")
+            }
+            });
+        }
+
+         function postV(){
+            alert("in post v ")
+             $.ajax({
+                method:"Post",
+                url:"testing",
+                data:{text:"King"
+            },success:function(res){
+              // document.location.reload()
+              alert("Done")
+            }
+            });
+
+         }
+
+    </script>  
+    
+</html>
+	            
