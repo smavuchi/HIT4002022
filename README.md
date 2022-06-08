@@ -1,2 +1,2 @@
 # HIT4002022
-HIT 400 2021-2022
+Open terminal in project directory and run main.py to start the application
