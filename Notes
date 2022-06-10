@@ -1,0 +1,25 @@
+notes:
+- need for calculation of average seeds required, per hactare, per crop
+- need to know the farm's coordinates and its measurements, length and width
+- the crops being focused on are visible from an arial space, not under green houses, trees etc
+- need to crop each crop's positioning and boundaries on the farm, if there's more that one crop on the farm
+- there's a problem of similar plant reflectancy on different crops, even on non crops... the point stated above solves this
+- no need for a dataset
+
+
+useful urls:
+- https://eos.com/blog/7-ways-to-use-landviewer-for-better-farm-management/
+- https://blogs.worldbank.org/impactevaluations/measuring-yields-space
+- https://www.skywatch.com/blog/using-spatial-aerial-imagery-estimate-crop-surfaces-developing-country
+- https://hatarilabs.com/ih-en/5-tutorials-for-crop-detection-and-vegetation-delineation-with-python-and-qgis
+- https://www.mdpi.com/2072-4292/13/17/3378/htm
+
+
+frontend modules:
+- signin
+- signup
+- dashboard
+- add farm
+- add farm inputs
+- analyse farm
+- edit account
