@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  #setting up our reactjs container (frontend)
+  client:
+    container_name: client
+    restart: always # restarts if it fails
+    build: ./client # directory with client container
+    volumes:
+      - ./client:/decentralizedvoting/src/client
+    ports:
+      - '3000:3000'
