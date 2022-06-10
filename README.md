@@ -38,3 +38,6 @@ Setting up Meta Mask:
 Downloading updates:
 - To download any updates made, click of the update file.
 - If any changes were made on your side, a git stash is required before updating otherwise you'll get an error, click on the git_stash_changes file
+
+
+NB note that the encoded BAT files will only work for Windows OS, else do manual installations
