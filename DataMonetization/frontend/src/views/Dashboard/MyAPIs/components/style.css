@@ -1,0 +1,15 @@
+.dataset-column-item {
+	border-radius: 8px;
+	transition: 0.2s;
+}
+
+.dataset-column-item:hover {
+   background: #06f;
+   color: #fff;
+   cursor: pointer;
+}
+
+.dataset-column-item:active {
+   background: #06a;
+   color: #fff;
+}

@@ -1,0 +1,54 @@
+body {
+  background-color: #eee;
+  font-family: sans-serif;
+}
+
+h1 { 
+  font-size: 25px; 
+  margin-top: 20px;
+  margin-left:  20px;
+}
+
+.route { 
+  padding: 20px;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+.route .heading {
+  font-size: 18px;
+}
+
+.route .description {
+  font-size: 16px;
+  color: #aaa;
+}
+
+.route .method {
+  color: green;
+  font-weight: bold;
+}
+
+.route .params {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #eee;
+  font-size: 15px;
+}
+
+.route .subheading {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}

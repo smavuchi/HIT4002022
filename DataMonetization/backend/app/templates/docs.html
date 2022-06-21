@@ -1,0 +1,34 @@
+<link href="{{ url_for('static', filename='vendor/prism/prism.css') }}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='docs/global.css') }}" rel="stylesheet" />
+
+<h1>Documentation</h1>
+<h2>{{ routes.len }}</h2>
+{% for route in routes %}
+<div class="route">
+    <p class="heading">
+      {% for method in route.methods %}
+        <div><span class="method">{{ method }}</span> {{ route.url }}</div>
+      {% endfor %}
+    </p>
+    <p class="subheading">
+      *<span>requires user</span>: {% if route.requires_user or route.roles %}<span class="true">true</span> {% else %}<span class="false">false</span> {% endif %}
+    </p>
+    {% if route.roles %}
+    <p class="subheading">
+      *<span>requires user roles (one of):</span> {{ route.roles }}
+    </p>
+    {% endif %}
+    <p class="description">{{ route.description }}</p>
+    <div class="params">
+      <p style="font-weight: 600">Parameters</p>
+      <pre><code class="language-js">{% if route.parameters %}{% for parameter in route.parameters %}{
+  name: {{ parameter.name }}, 
+  type: {{ parameter.type }}, 
+  required: {% if parameter.required %}true {% else %}false {% endif %}
+}
+{% endfor %}{% else %}None{% endif %}</code></pre>
+    </div>
+</div>
+{% endfor %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='vendor/prism/prism.js') }}"></script>
